@@ -5,6 +5,8 @@
 package upeu.edu.pe.Proyectlp2.infrastructure.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -30,11 +32,14 @@ public class UserEntity {
     private String cellphone;
     private String password;
     private LocalDateTime dateCreated;
+    
+    @Enumerated(EnumType.STRING)
+    private UserType userType;
 
     public UserEntity() {
     }
 
-    public UserEntity(Integer id, String username, String firstname, String lastname, String email, String address, String cellphone, String password, LocalDateTime dateCreated) {
+    public UserEntity(Integer id, String username, String firstname, String lastname, String email, String address, String cellphone, String password, LocalDateTime dateCreated, UserType userType) {
         this.id = id;
         this.username = username;
         this.firstname = firstname;
@@ -44,7 +49,10 @@ public class UserEntity {
         this.cellphone = cellphone;
         this.password = password;
         this.dateCreated = dateCreated;
+        this.userType = userType;
     }
+
+    
 
     
     
@@ -118,6 +126,14 @@ public class UserEntity {
 
     public void setDateCreated(LocalDateTime dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
     }
     
     

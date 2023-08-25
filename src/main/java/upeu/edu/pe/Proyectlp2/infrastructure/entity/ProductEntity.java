@@ -42,18 +42,6 @@ public class ProductEntity {
     public ProductEntity() {
         this.setCode(UUID.randomUUID().toString());
     }
-
-    public ProductEntity(Integer id, String code, String name, String description, String image, BigDecimal price, LocalDateTime dateCreated, LocalDateTime dateUpdate, UserEntity UserEntity) {
-        this.id = id;
-        this.code = code;
-        this.name = name;
-        this.description = description;
-        this.image = image;
-        this.price = price;
-        this.dateCreated = dateCreated;
-        this.dateUpdate = dateUpdate;
-        this.UserEntity = UserEntity;
-    }
     
 
     public Integer getId() {
